@@ -1,0 +1,28 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-navy {
+  background-color: #1C3D5A;
+}
+
+.text-navy {
+  color: #1C3D5A;
+}
+
+.bg-orange {
+  background-color: #F95F0B;
+}
+
+.text-slate {
+  color: #576574;
+}
+
+.bg-sky {
+  background-color: #62B6E3;
+}
+
+.bg-grey {
+  background-color: #EDEDED;
+}
