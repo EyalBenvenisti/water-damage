@@ -1,4 +1,2 @@
-
-water_damage_website/node_modules/
-
-water_damage_website/.next/
+node_modules/
+.next/
