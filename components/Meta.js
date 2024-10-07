@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import PropTypes from 'prop-types';
 
+
 const Meta = ({ title, description, keywords, ogImage, url, type = "website" }) => {
   return (
     <Head>
