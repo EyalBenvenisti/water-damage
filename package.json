@@ -4,8 +4,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "postinstall": "npm install"
+    "start": "next start"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.1.0",
