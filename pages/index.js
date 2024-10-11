@@ -1,4 +1,4 @@
-import config from '../config';
+import config from '../config/config';
 import Meta from '../components/Meta';
 import Link from 'next/link';
 import { Icon } from '@iconify/react';
@@ -23,7 +23,7 @@ export default function Home() {
       <Meta
         title="Water Damage Restoration in Chanhassen | Family-Owned"
         description="Get professional water damage restoration services in Chanhassen. Family-owned and trusted for over 20 years. Call for a free quote now!"
-        url="https://www.example.com"
+        url="https://water-damage.vercel.app/"
       />
 
       {/* Hero Section */}
@@ -129,7 +129,6 @@ export default function Home() {
         </div>
       </section>
 
-
       {/* Testimonials Section */}
       <section className="py-20 bg-white text-center">
         <div className="container mx-auto px-4">
@@ -163,9 +162,6 @@ export default function Home() {
           <p className="text-2xl mt-12">Overall Rating: <span className="font-bold">4.8/5</span> based on 250+ reviews</p>
         </div>
       </section>
-
-
-
 
       {/* Trust & Business Values Section */}
       <section className="py-20 bg-gray-100 text-center">

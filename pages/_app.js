@@ -1,7 +1,7 @@
-import '../styles/global.css';  // Ensure global CSS is imported
-import Navbar from '../components/Navbar';  // Import the Navbar component
-import Footer from '../components/Footer';  // Import the Footer component
-import Meta from '../components/Meta';  // Import the Meta component
+import '../styles/global.css'; 
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import Meta from '../components/Meta';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
       <Meta
         title="Water Damage Restoration Experts"
         description="Top-rated water damage restoration services. Family-owned and trusted in Chanhassen."
-        url="https://www.example.com"
+        url="https://water-damage.vercel.app/"
         // TODO: Fix later ogImage="/images/default-og-image.jpg"  {/* Default OG image */}
       />
 
