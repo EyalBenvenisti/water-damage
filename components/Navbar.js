@@ -1,7 +1,6 @@
-// components/Navbar.js
 import { useState } from 'react';
 import Link from 'next/link';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Icons for the hamburger menu
+import { FaBars, FaTimes } from 'react-icons/fa';
 import config from '../config/config';
 import navLinks from '../config/navLinks';
 
@@ -31,22 +30,32 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Call Us Button */}
+        {/* Call Us Button for Desktop */}
         <div className="hidden md:flex">
           <Link href={`tel:${config.phone}`}>
             <button className="bg-orange text-white px-4 py-2 rounded-full hover:bg-sky transition duration-300">
-              Call Us Now
+              Call {config.phone}
             </button>
           </Link>
         </div>
 
-        {/* Hamburger menu button for mobile */}
-        <button onClick={toggleMenu} className="md:hidden text-white focus:outline-none">
-          {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
+        {/* Mobile Call Us Button and Hamburger Menu */}
+        <div className="flex md:hidden items-center space-x-4">
+          {/* Call Us Button for Mobile */}
+          <Link href={`tel:${config.phone}`}>
+            <button className="bg-orange text-white px-4 py-2 rounded-full hover:bg-sky transition duration-300">
+            Call {config.phone}
+            </button>
+          </Link>
+
+          {/* Hamburger Menu Button */}
+          <button onClick={toggleMenu} className="text-white focus:outline-none">
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden bg-navy text-white py-4">
           <ul className="flex flex-col items-center space-y-4">
@@ -58,13 +67,6 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="flex justify-center mt-4">
-            <Link href={`tel:${config.phone}`}>
-              <button className="bg-orange text-white px-4 py-2 rounded-full hover:bg-sky transition duration-300">
-                Call Us Now
-              </button>
-            </Link>
-          </div>
         </div>
       )}
     </nav>

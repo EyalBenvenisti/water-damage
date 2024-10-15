@@ -10,6 +10,20 @@ const config = {
   zipCodeArea: "12345",
   googleMapURL: "https://maps.google.com/?q=123+Water+St,+Chanhassen,+MN+12345",
 
+  // Service Areas
+  serviceAreas: [
+    "Eden Prairie, MN",
+    "Minnetonka, MN",
+    "Shakopee, MN",
+    "Excelsior, MN",
+    "Victoria, MN",
+    "Chaska, MN",
+    "Bloomington, MN",
+    "Wayzata, MN",
+    "Hopkins, MN",
+  ],
+
+
   // Social Links
   socialLinks: {
     facebook: "https://facebook.com/waterdamage",

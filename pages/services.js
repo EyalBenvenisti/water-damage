@@ -1,4 +1,5 @@
 import Meta from '../components/Meta';
+import PageHeader from '../components/PageHeader';
 import { useState } from 'react';
 import Head from 'next/head';
 
@@ -50,7 +51,7 @@ export default function Services() {
     {
       "@type": "Service",
       "serviceType": "Flood Damage Restoration",
-      "description": "We offer quick and efficient flood damage restoration services including water extraction and structural drying.",
+      "description": "Quick and efficient flood damage restoration including water extraction and structural drying.",
       "provider": {
         "@type": "LocalBusiness",
         "name": "Water Damage Experts",
@@ -146,15 +147,13 @@ export default function Services() {
         />
       </Head>
 
-      <header className="bg-navy text-white text-center py-10">
-        <h1 className="text-4xl font-bold">Our Services</h1>
-        <p className="mt-2 text-lg">
-          Reliable, Professional, and Compassionate Service for Your Home and Business
-        </p>
-      </header>
+      <PageHeader
+        title="Our Services"
+        subtitle="Comprehensive Solutions for All Your Water Damage Restoration Needs"
+      />
 
-      <main className="py-10 px-6">
-        <section id="flood-damage" className="container mx-auto mb-10 max-w-4xl">
+      <main>
+        <section>
           <h2 className="text-3xl font-semibold text-sky">Flood Damage</h2>
           <p className="mt-4 text-slate">
             Flooding can cause severe and lasting damage to property if not addressed quickly. Our flood damage restoration service is here to help you restore your home or business to its original condition.
@@ -167,7 +166,7 @@ export default function Services() {
           </ul>
         </section>
 
-        <section id="smoke-damage" className="container mx-auto mb-10 max-w-4xl">
+        <section id="smoke-damage" className="mb-10">
           <h2 className="text-3xl font-semibold text-sky">Smoke Damage</h2>
           <p className="mt-4 text-slate">
             Smoke damage can linger long after a fire is put out. Our smoke damage restoration service is designed to eliminate smoke residue, remove odors, and restore affected areas.
@@ -180,7 +179,7 @@ export default function Services() {
           </ul>
         </section>
 
-        <section id="mold-remediation" className="container mx-auto mb-10 max-w-4xl">
+        <section id="mold-remediation" className="mb-10">
           <h2 className="text-3xl font-semibold text-sky">Mold Remediation</h2>
           <p className="mt-4 text-slate">
             Mold can develop quickly in moist environments, posing health risks and causing property damage. Our mold remediation services are designed to identify, contain, and eliminate mold growth safely.
@@ -193,20 +192,7 @@ export default function Services() {
           </ul>
         </section>
 
-        <section id="construction-services" className="container mx-auto mb-10 max-w-4xl">
-          <h2 className="text-3xl font-semibold text-sky">Construction Services</h2>
-          <p className="mt-4 text-slate">
-            From repairs to full-scale construction projects, our team is equipped to handle a range of construction services to help you restore and enhance your property.
-          </p>
-          <ul className="list-disc pl-5 mt-4 text-slate">
-            <li>Restoration and repairs for damaged structures</li>
-            <li>Home or office remodeling and renovation projects</li>
-            <li>Structural reinforcement for enhanced stability</li>
-            <li>Custom builds to suit your needs and budget</li>
-          </ul>
-        </section>
-
-        <section id="faq" className="container mx-auto max-w-4xl py-12">
+        <section id="faq" className="py-12">
           <h2 className="text-3xl font-semibold text-center text-sky mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (

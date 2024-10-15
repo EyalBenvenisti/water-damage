@@ -1,34 +1,124 @@
-/* styles/global.css */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables: Design Tokens */
+:root {
+  /* Colors */
+  --color-navy: #1C3D5A;
+  --color-orange: #F95F0B;
+  --color-sky: #62B6E3;
+  --color-grey: #EDEDED;
+  --color-slate: #576574;
+  --color-text: #64748b;
+
+  /* Font Sizes */
+  --font-size-h1: 2.5rem;
+  --font-size-h1-lg: 3rem;
+  --font-size-base: 1rem;
+
+  /* Spacing */
+  --space-section: 2rem;
+  --space-section-lg: 3rem;
+  --space-main-padding: 2rem;
+  --space-main-padding-md: 3rem;
+  --space-main-padding-lg: 4rem;
+
+  /* Border Radius */
+  --radius-button: 9999px;
+
+  /* Other */
+  --transition-duration: 0.3s;
+}
+
 html, body {
   font-family: 'Roboto', sans-serif;
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.bg-navy {
-  background-color: #1C3D5A;
+/* Global Box Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.text-navy {
-  color: #1C3D5A;
+/* Background and Text Colors */
+.bg-navy { /* background-color: var(--color-navy); */ }
+.text-navy { color: var(--color-navy); }
+.bg-orange { background-color: var(--color-orange); }
+.text-slate { color: var(--color-slate); }
+.bg-sky { background-color: var(--color-sky); }
+.bg-grey { background-color: var(--color-grey); }
+
+/* Main Layout Styling */
+main {
+  max-width: 1280px;
+  padding: var(--space-main-padding) 1rem;
+  margin: 0 auto;
 }
 
-.bg-orange {
-  background-color: #F95F0B;
+@media (min-width: 768px) {
+  main {
+    padding: var(--space-main-padding-md) 2rem;
+  }
 }
 
-.text-slate {
-  color: #576574;
+@media (min-width: 1024px) {
+  main {
+    padding: var(--space-main-padding-lg) 2rem;
+  }
 }
 
-.bg-sky {
-  background-color: #62B6E3;
+/* Section Spacing */
+section {
+  margin-top: var(--space-section);
 }
 
-.bg-grey {
-  background-color: #EDEDED;
+@media (min-width: 768px) {
+  section {
+    margin-top: var(--space-section-lg);
+  }
+}
+
+/* Typography */
+h1, h2, h3 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  color: var(--color-grey);
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-h1-lg);
+  }
+}
+
+p {
+  color: var(--color-text);
+}
+
+/* Button Styles */
+button, a.button {
+  display: inline-block;
+  background-color: var(--color-orange);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-button);
+  text-align: center;
+  transition: background-color var(--transition-duration) ease;
+}
+
+button:hover, a.button:hover {
+  background-color: var(--color-sky);
 }
