@@ -1,3 +1,4 @@
+import config from '../config/config';
 import Meta from '../components/Meta';
 import PageHeader from '../components/PageHeader';
 import { useState } from 'react';
@@ -121,7 +122,7 @@ export default function Services() {
   };
 
   return (
-    <div className="bg-grey min-h-screen">
+    <>
       <Meta
         title="Our Services | Water Damage Restoration Experts"
         description="Explore our range of water damage restoration services including flood damage, smoke damage, mold remediation, and construction services."
@@ -152,9 +153,9 @@ export default function Services() {
         subtitle="Comprehensive Solutions for All Your Water Damage Restoration Needs"
       />
 
-      <main>
+      <main role="main" className="container">
         <section>
-          <h2 className="text-3xl font-semibold text-sky">Flood Damage</h2>
+          <h2 className="text-3xl font-semibold">Flood Damage</h2>
           <p className="mt-4 text-slate">
             Flooding can cause severe and lasting damage to property if not addressed quickly. Our flood damage restoration service is here to help you restore your home or business to its original condition.
           </p>
@@ -167,7 +168,7 @@ export default function Services() {
         </section>
 
         <section id="smoke-damage" className="mb-10">
-          <h2 className="text-3xl font-semibold text-sky">Smoke Damage</h2>
+          <h2 className="text-3xl font-semibold  ">Smoke Damage</h2>
           <p className="mt-4 text-slate">
             Smoke damage can linger long after a fire is put out. Our smoke damage restoration service is designed to eliminate smoke residue, remove odors, and restore affected areas.
           </p>
@@ -180,7 +181,7 @@ export default function Services() {
         </section>
 
         <section id="mold-remediation" className="mb-10">
-          <h2 className="text-3xl font-semibold text-sky">Mold Remediation</h2>
+          <h2 className="text-3xl font-semibold  ">Mold Remediation</h2>
           <p className="mt-4 text-slate">
             Mold can develop quickly in moist environments, posing health risks and causing property damage. Our mold remediation services are designed to identify, contain, and eliminate mold growth safely.
           </p>
@@ -193,19 +194,19 @@ export default function Services() {
         </section>
 
         <section id="faq" className="py-12">
-          <h2 className="text-3xl font-semibold text-center text-sky mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-semibold text-center mb-6">Frequently Asked Questions</h2>
           <div className="space-y-4">
             {faqs.map((faq, index) => (
-              <div key={index} className="border border-slate rounded-md">
+              <div key={index} className="rounded-md">
                 <button
-                  className="w-full flex justify-between items-center px-4 py-3 text-left text-sky font-semibold focus:outline-none"
+                  className="w-full flex justify-between items-center px-4 py-3 text-left font-semibold focus:outline-none"
                   onClick={() => toggleAccordion(index)}
                 >
                   {faq.question}
                   <span>{activeIndex === index ? '-' : '+'}</span>
                 </button>
                 {activeIndex === index && (
-                  <div className="px-4 py-3 text-slate bg-grey">
+                  <div className="px-4 py-3 text-slate">
                     {faq.answer}
                   </div>
                 )}
@@ -213,12 +214,13 @@ export default function Services() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <a href="/contact" className="inline-block bg-orange text-white font-semibold px-6 py-3 rounded-md hover:bg-sky transition">
-              Contact Us for 24/7 Emergency Service
+            <a href={`tel:${config.phone}`} className="inline-block bg-orange text-white font-semibold px-6 py-3 rounded-md hover:bg-sky transition">
+              Call Now for 24/7 Emergency Service
             </a>
           </div>
+
         </section>
       </main>
-    </div>
+    </>
   );
 }

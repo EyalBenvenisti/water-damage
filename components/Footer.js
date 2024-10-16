@@ -68,7 +68,7 @@ export default function Footer() {
               Our business is a trusted, registered member of the Carver County business community. We are dedicated to serving the local area with integrity and commitment.
             </p>
             <Link href="https://www.co.carver.mn.us/business-directory" passHref>
-              <span className="text-orange font-semibold hover:text-sky transition duration-300 cursor-pointer">
+              <span className="text-orange font-semibold hover:  transition duration-300 cursor-pointer">
                 View Our Listing
               </span>
             </Link>

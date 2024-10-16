@@ -1,22 +1,18 @@
+// pages/_app.js
 import '../styles/global.css';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import Meta from '../components/Meta';
+import MainLayout from '../layouts/MainLayout';
+import BlogLayout from '../layouts/BlogLayout';
+import DefaultLayout from '../layouts/DefaultLayout';
 
 function MyApp({ Component, pageProps }) {
+  // Choose layout based on Component
+  const getLayout = Component.layout || ((page) => <DefaultLayout>{page}</DefaultLayout>);
+
   return (
     <>
-      {/* Default Meta Tags - can be overridden by individual pages */}
-      <Meta
-        title="Water Damage Restoration Experts"
-        description="Top-rated water damage restoration services. Family-owned and trusted in Chanhassen."
-        url="https://water-damage.vercel.app/"
-        // TODO: Fix later ogImage="/images/default-og-image.jpg"  {/* Default OG image */}
-      />
-
-      <Navbar />  {/* Navigation bar at the top */}
-      <Component {...pageProps} />  {/* Main page content */}
-      <Footer />  {/* Footer at the bottom */}
+      {getLayout(
+        <Component {...pageProps} />
+      )}
     </>
   );
 }
