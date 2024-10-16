@@ -9,6 +9,8 @@ const config = {
   cityState: "Chanhassen, MN",
   zipCodeArea: "12345",
   googleMapURL: "https://maps.google.com/?q=123+Water+St,+Chanhassen,+MN+12345",
+  workingHours: "24/7 Monday to Friday",
+
 
   // Service Areas
   serviceAreas: [
