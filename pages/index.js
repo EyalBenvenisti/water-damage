@@ -41,35 +41,38 @@ function Home() {
       />
 
       {/* Hero Section */}
-      <section className="hero-section bg-cover bg-center mt-0 relative h-screen text-white flex flex-col justify-center items-left text-left">
-
+      <section className="hero-section bg-cover bg-center mt-0 relative h-screen text-white flex flex-col justify-center items-start text-left px-4 md:px-8">
         <div className="z-10 container">
-          <h1 className="text-5xl text-white lg:w-1/2 font-extrabold mb-6">Protect Your Home with Expert Water Damage Services</h1>
-          <p className="text-l text-grey mb-6">Family-Owned, Customer-Trusted for Over 20 Years</p>
+          <h1 className="text-3xl md:text-5xl text-white font-extrabold mb-4 md:mb-6 lg:w-1/2">
+            Protect Your Home with Expert Water Damage Services
+          </h1>
+          <p className="text-sm md:text-lg text-gray-300 mb-4 md:mb-6">
+            Family-Owned, Customer-Trusted for Over 20 Years
+          </p>
 
           <Link href={`tel:${config.phone}`} passHref>
-            <button className="bg-orange text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-sky transition duration-300 shadow-lg">
+            <button className="bg-orange text-white px-6 py-3 md:px-10 md:py-4 rounded-full text-sm md:text-lg font-semibold hover:bg-sky transition duration-300 shadow-lg">
               Call Now {config.phone}
             </button>
           </Link>
 
-          <div className="flex justify-left mt-8 space-x-8">
-            <Icon icon={bbbIcon} className="h-20 w-14" title="Better Business Bureau" />
-            <Icon icon={homeAdvisorIcon} className="h-20 w-14" title="Home Advisor" />
-            <Icon icon={googleIcon} className="h-20 w-14" title="Google" />
+          <div className="flex justify-start mt-6 md:mt-8 space-x-4 md:space-x-8">
+            <Icon icon={bbbIcon} className="h-10 w-8 md:h-20 md:w-14" title="Better Business Bureau" />
+            <Icon icon={homeAdvisorIcon} className="h-10 w-8 md:h-20 md:w-14" title="Home Advisor" />
+            <Icon icon={googleIcon} className="h-10 w-8 md:h-20 md:w-14" title="Google" />
           </div>
-
         </div>
-
       </section>
 
+
       {/* About Section */}
+
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-start text-left">
-            <div className="md:w-1/2 mb-8 md:mb-5">
-            <h2 className="text-4xl font-bold mb-10 text-left">About Our Water Damage Restoration Team</h2>
-
+            {/* About Text */}
+            <div className="md:w-3/4 mb-8 md:mb-5">
+              <h2 className="text-4xl font-bold mb-10 text-left">About Our Water Damage Restoration Team</h2>
               <p className="text-l mx-auto pb-2">
                 Our team, established over 20 years ago, was founded by a dedicated professional who left a successful corporate career to build a family-owned business focused on helping homeowners recover from disasters. With a steadfast commitment to quality and customer satisfaction, we've earned a respected reputation for reliability and excellence.
               </p>
@@ -87,12 +90,30 @@ function Home() {
               </p>
             </div>
 
-            <div className="md:w-1/2 flex justify-right md:justify-start">
-              <img src="/images/mike.png" alt="Founder" className=" object-cover" />
+            {/* Team Member Boxes */}
+            <div className="md:w-1/2 grid grid-cols-2 gap-4 md:gap-5 mt-10">
+              {/* Each Box for a Team Member */}
+              {[
+                { name: config.siteOwner, title: "Owner & Water Restoration Specialist" },
+                { name: "Jane Smith", title: "Mold Remediation Expert" },
+                { name: "Alice Johnson", title: "Structural Drying Technician" },
+                { name: "Bob Brown", title: "Waterproofing Specialist" },
+                { name: "Carol White", title: "Emergency Response Coordinator" },
+                { name: "David Lee", title: "Customer Care Manager" },
+              ].map((member, index) => (
+                <div key={index} className="border border-navy p-4 rounded-md text-center">
+                  <div className="h-10 w-10 bg-blue-200 mx-auto rounded-xl mb-3 flex items-center justify-center">
+                    <span className="text-sm font-bold text-navy">{member.name[0]}</span>
+                  </div>
+                  <h3 className="text-sm font-semibold text-navy">{member.name}</h3>
+                  <p className="text-xs text-gray-600">{member.title}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
 
 
       {/* Services Section */}

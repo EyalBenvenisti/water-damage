@@ -51,7 +51,7 @@ export default function Navbar() {
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end z-50 md:hidden" onClick={toggleMenu}>
           {/* Slide-in Menu Content */}
-          <div className="bg-navy text-white w-2/3 max-w-xs p-6 h-full overflow-y-auto transform transition-transform duration-300 ease-in-out" onClick={(e) => e.stopPropagation()}>
+          <div className="bg-navy text-white w-4/5 max-w-xs p-6 h-full overflow-y-auto transform transition-transform duration-300 ease-in-out" onClick={(e) => e.stopPropagation()}>
             <div className="flex justify-between items-center mb-8">
 
               {/* Close Button */}
