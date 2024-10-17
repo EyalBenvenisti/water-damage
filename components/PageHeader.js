@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function PageHeader({ title, subtitle, breadcrumbs }) {
   return (
-    <header className="bg-navy text-white py-10 border-t border-orange">
+    <header className="bg-navy text-white py-10 border-t border-navy">
       <div className="container mx-auto px-4 md:px-0">
         <h1 className="text-4xl mb-0 md:text-6xl text-left">{title}</h1>
         {subtitle && (

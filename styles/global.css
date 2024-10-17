@@ -33,6 +33,24 @@
   --transition-duration: 0.3s;
 }
 
+/* Styling for the loading bar */
+#loader {
+  background-color: var(--color-orange);
+  height: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease-out;
+}
+
+#loader.loading {
+  animation: loading-bar 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+#loader.loaded {
+  transform: scaleX(1);
+}
+
+
 html, body {
   font-family: 'Roboto', sans-serif;
   color: var(--color-text);
