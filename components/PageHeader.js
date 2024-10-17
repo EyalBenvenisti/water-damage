@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 export default function PageHeader({ title, subtitle, breadcrumbs }) {
   return (
-    <header className="bg-navy text-white py-10">
+    <header className="bg-navy text-white py-10 border-t border-orange">
       <div className="container mx-auto px-4 md:px-0">
-        <h1 className="text-4xl md:text-6xl text-left">{title}</h1>
+        <h1 className="text-4xl mb-0 md:text-6xl text-left">{title}</h1>
         {subtitle && (
-          <p className="mt-2 text-lg md:text-xl text-left">
+          <span className="mt-2 text-gray-300 text-sm md:text-md text-left">
             {subtitle}
-          </p>
+          </span>
         )}
 
         {/* Breadcrumbs */}

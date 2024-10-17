@@ -13,7 +13,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-navy text-white py-4 relative">
-      <div className="container mx-auto flex justify-between items-center px-4 md:px-0">
+      <div className="container mx-auto flex justify-between items-center  px-4 md:px-0">
         {/* Site name */}
         <h1 className="text-xl font-bold m-0 p-0">
           <Link href="/" className="hover:text-orange">{config.siteName}</Link>

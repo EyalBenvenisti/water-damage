@@ -46,7 +46,7 @@ function Home() {
           <h1 className="text-3xl md:text-5xl text-white font-extrabold mb-4 md:mb-6 lg:w-1/2">
             Protect Your Home with Expert Water Damage Services
           </h1>
-          <p className="text-sm md:text-lg text-gray-300 mb-4 md:mb-6">
+          <p className="text-sm md:text-lg text-white mb-4 md:mb-6">
             Family-Owned, Customer-Trusted for Over 20 Years
           </p>
 
