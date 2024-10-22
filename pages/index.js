@@ -17,6 +17,8 @@ import emergencyIcon from '@iconify-icons/mdi/alarm-light';
 import licensedIcon from '@iconify-icons/mdi/license';
 import ecoFriendlyIcon from '@iconify-icons/mdi/leaf';
 import satisfactionIcon from '@iconify-icons/mdi/thumb-up';
+import Testimonials from '../components/Testimonials';
+
 
 function Home() {
   const scrollContainerRef = useRef(null);
@@ -141,42 +143,7 @@ function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-white text-center">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12">Our Customers Say It Best</h2>
-
-          {/* Scrollable Testimonials Container */}
-          <div
-            ref={scrollContainerRef}
-            className="flex overflow-x-auto space-x-4 py-6 px-2 snap-x snap-mandatory"
-          >
-            {[
-              { text: "They were incredibly professional and helped us after a major flood. Highly recommend!", name: "John D." },
-              { text: "Quick response, excellent work! They saved our home from serious water damage.", name: "Sarah W." },
-              { text: "Best service I've experienced in years. They handled everything with care.", name: "Emily R." },
-              { text: "Amazing team and outstanding results. Truly grateful!", name: "Michael B." },
-              { text: "Fast and efficient service. They know what they're doing.", name: "Jessica T." },
-              { text: "Excellent customer service and impressive work quality!", name: "James L." },
-              { text: "Their attention to detail is second to none!", name: "Laura S." },
-              { text: "Very professional and efficient. Highly recommended.", name: "Daniel M." },
-              { text: "A lifesaver in an emergency situation. Thank you!", name: "Amanda P." },
-              { text: "Outstanding service from start to finish.", name: "Christopher H." },
-              { text: "Friendly staff and great results. I'm a satisfied customer.", name: "Olivia K." },
-              { text: "Top-notch service! Will use them again in the future.", name: "Benjamin F." },
-              { text: "Responsive, reliable, and very professional.", name: "Sophia C." },
-              { text: "Efficient and friendly. Truly an amazing experience.", name: "Emma W." },
-              { text: "Highly recommended for anyone needing reliable help.", name: "Liam J." },
-            ].map((testimonial, index) => (
-              <div key={index} className="snap-start p-6 bg-gray-100 shadow-lg rounded-lg w-80 flex-shrink-0">
-                <p className="text-xl mb-4 italic">"{testimonial.text}"</p>
-                <p className="font-bold">– {testimonial.name}</p>
-                <div className="text-yellow-400">★★★★★</div>
-              </div>
-            ))}
-          </div>
-          <p className="text-2xl mt-12">Overall Rating: <span className="font-bold">4.8/5</span> based on 250+ reviews</p>
-        </div>
-      </section>
+      <Testimonials />
 
       {/* Trust & Business Values Section */}
       <section className="py-20 bg-gray-100 text-center">
