@@ -35,12 +35,12 @@
 
 /* Styling for the loading bar */
 #loader {
+  height: 1px; /* Adjust height if needed */
   background-color: var(--color-orange);
-  height: 4px;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.5s ease-out;
+  position: relative;
+  z-index: 50;
 }
+
 
 #loader.loading {
   animation: loading-bar 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;

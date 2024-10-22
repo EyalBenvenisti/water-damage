@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { useRouter } from 'next/router';  // Import useRouter
 import config from '../config/config';
 import navLinks from '../config/navLinks';
+import Loader from '../components/Loader';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -99,6 +100,8 @@ export default function Navbar() {
           </div>
         </div>
       )}
+      {/* Loader Component */}
+      <Loader />
     </nav>
   );
 }

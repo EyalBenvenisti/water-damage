@@ -1,35 +1,39 @@
 // components/Loader.js
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 export default function Loader() {
+  const [width, setWidth] = useState('0%');
   const router = useRouter();
 
   useEffect(() => {
-    const loader = document.getElementById('loader');
-
-    const startLoading = () => {
-      loader.classList.add('loading');
-      loader.classList.remove('loaded');
+    const handleRouteChangeStart = () => {
+      setWidth('0%'); // Reset to 0% to make it visible
+      setTimeout(() => setWidth('100%'), 10); // Expand to 100% for the animation
     };
 
-    const stopLoading = () => {
-      loader.classList.remove('loading');
-      loader.classList.add('loaded');
+    const handleRouteChangeComplete = () => {
+      setTimeout(() => setWidth('0%'), 500); // Set to 0% after completing for hide
     };
 
     // Listen to route change events
-    router.events.on('routeChangeStart', startLoading);
-    router.events.on('routeChangeComplete', stopLoading);
-    router.events.on('routeChangeError', stopLoading);
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+    router.events.on('routeChangeError', handleRouteChangeComplete);
 
     // Cleanup listeners on unmount
     return () => {
-      router.events.off('routeChangeStart', startLoading);
-      router.events.off('routeChangeComplete', stopLoading);
-      router.events.off('routeChangeError', stopLoading);
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+      router.events.off('routeChangeError', handleRouteChangeComplete);
     };
   }, [router]);
 
-  return <div id="loader" className="fixed top-0 left-0 w-full z-50 bg-orange h-1 transform scale-x-0 origin-left transition-transform duration-500 ease-in-out"></div>;
+  return (
+    <div
+      id="loader"
+      className="fixed top-0 left-0 h-1 bg-orange z-50 transition-all duration-500 ease-in-out"
+      style={{ width }}
+    ></div>
+  );
 }
