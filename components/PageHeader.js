@@ -16,14 +16,14 @@ export default function PageHeader({ title, subtitle, breadcrumbs }) {
           <ul className="flex justify-start items-center text-sm md:text-base space-x-2">
             <li>
               <Link href="/" passHref>
-                <span className="hover:underline   cursor-pointer">Home</span>
+                <span className="hover:underline cursor-pointer">Home</span>
               </Link>
             </li>
             {breadcrumbs && breadcrumbs.map((breadcrumb, index) => (
               <li key={index} className="flex items-center">
                 <span className="mx-1">/</span>
                 <Link href={breadcrumb.href} passHref>
-                  <span className="hover:underline   cursor-pointer">{breadcrumb.label}</span>
+                  <span className="hover:underline cursor-pointer">{breadcrumb.label}</span>
                 </Link>
               </li>
             ))}
